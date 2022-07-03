@@ -8,6 +8,6 @@ To use the code:
 1. upload code to your Arduino board
 2. Open the Serial Monitor 
 3. Enter the letter T (in caps) 
-4. The onboard light should toggle On/Off
+4. The onboard light should toggle On/Off (located at PORT B pin 5)
 
 It should be noted that there is a bug where the light will stay on the first time you enter the toggle input, I am working on this after I complete my own USART library 
