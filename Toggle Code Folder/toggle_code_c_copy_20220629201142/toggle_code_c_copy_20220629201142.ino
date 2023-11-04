@@ -22,6 +22,9 @@ int main(void)
   while (1) //same as loop() function (all embeded systems need endless loop)
   {
     BUTTON_VALUE = millis();
+
+    DDRB |= (1 << 5); //sets port B pin 5 as output
+    
     /*check if a bit in a register is set to 1*/
     if (usartCharReceived())
     {
@@ -29,6 +32,9 @@ int main(void)
 
       switch (inChar)
       {
+        case 't':
+          LED_TOGGLE();
+          break;
         case  'T':
           LED_TOGGLE();
           break;
@@ -41,7 +47,6 @@ void LED_TOGGLE(void)
 {
   if (BUTTON_VALUE = 1)
   {
-    DDRB |= (1 << 5); //sets port B pin 5 as output
     PORTB ^= (1 << 5);
   }
 }
